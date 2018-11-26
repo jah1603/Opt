@@ -61,6 +61,21 @@ public class Pupil {
                 .collect(Collectors.toSet());
     }
 
+    public Pupil addEnemy(Pupil pupil) {
+        this.enemies.add(pupil);
+        return this;
+    }
+
+    public Pupil addFriend(Pupil pupil) {
+        this.friends.add(pupil);
+        return this;
+    }
+
+    public Pupil addDisruptivePartner(Pupil pupil) {
+        this.disruptive_partnerships.add(pupil);
+        return this;
+    }
+
     public Boolean hasSensoryImpairment() {
         return sensory_impairment;
     }
@@ -92,4 +107,6 @@ public class Pupil {
     public void setDesk(Desk desk) {
         this.desk = desk;
     }
+
+
 }
