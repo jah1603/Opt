@@ -1,4 +1,4 @@
-import models.Desk;
+
 import java.util.stream.Collectors;
 import java.util.Set;
 import java.util.HashSet;
@@ -27,7 +27,6 @@ public class Pupil {
         this.academic_achiever = academic_achiever;
 
     }
-
 
     public int getId() {
         return id;
