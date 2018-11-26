@@ -62,10 +62,11 @@ public class PupilTest {
 
      @Test
      public void canAddFriends(){
-        pupil1.addFriend(pupil2);
+        pupil1.addFriend(pupil2).addFriend(pupil3);
         HashSet<Pupil> friends = new HashSet<Pupil>();
         friends.add(pupil2);
-        assertEquals(1, pupil1.getFriends(friends).size());
+        friends.add(pupil3);
+        assertEquals(2, pupil1.getFriends(friends).size());
      }
 
      @Test
@@ -79,10 +80,11 @@ public class PupilTest {
 
      @Test
      public void canAddDisruptivePartners(){
-        pupil1.addDisruptivePartner(pupil3);
+        pupil1.addDisruptivePartner(pupil3).addDisruptivePartner(pupil2);
         HashSet<Pupil> disruptive_partnerships = new HashSet<Pupil>();
         disruptive_partnerships.add(pupil3);
-        assertEquals(1, pupil1.getDisruptivePartnerships(disruptive_partnerships).size());
+        disruptive_partnerships.add(pupil2);
+        assertEquals(2, pupil1.getDisruptivePartnerships(disruptive_partnerships).size());
      }
 
 
