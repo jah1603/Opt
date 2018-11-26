@@ -44,5 +44,11 @@ public class PupilTest {
         assertEquals(true, pupil2.isAcademicAchiever());
      }
 
+     @Test
+     public void canAssignDesk(){
+        pupil1.setDesk(desk1);
+        assertEquals(desk1, pupil1.getDesk());
+     }
+
 
 }
