@@ -1,4 +1,4 @@
-
+package models;
 import java.util.stream.Collectors;
 import java.util.Set;
 import java.util.HashSet;
@@ -7,6 +7,7 @@ import java.util.HashSet;
 public class Pupil {
 
     private int id;
+    private String name;
     private Set<Pupil> friends = new HashSet<>();
     private Set<Pupil> enemies = new HashSet<>();
     private Set<Pupil> disruptive_partnerships = new HashSet<Pupil>();
@@ -19,9 +20,10 @@ public class Pupil {
     public Pupil(){};
 
 
-    public Pupil(int id, final Boolean sensory_impairment, final Boolean generally_attentive, final Boolean academic_achiever) {
+    public Pupil(int id, String name, final Boolean sensory_impairment, final Boolean generally_attentive, final Boolean academic_achiever) {
 
         this.id = id;
+        this.name = name;
         this.sensory_impairment = sensory_impairment;
         this.generally_attentive = generally_attentive;
         this.academic_achiever = academic_achiever;
@@ -34,6 +36,14 @@ public class Pupil {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name){
+        this.name = name;
     }
 
     public Set<Pupil> getFriends(final Set<Pupil> others) {
