@@ -34,6 +34,22 @@ public class Desk {
         return column;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public void setRow(int row){
+        this.row = row;
+    }
+
+    public void setColumn(int column){
+        this.column = column;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 41;
