@@ -20,7 +20,7 @@ public class Pupil {
     public Pupil(){};
 
 
-    public Pupil(int id, String name, final Boolean sensory_impairment, final Boolean generally_attentive, final Boolean academic_achiever) {
+    public Pupil(String name, final Boolean sensory_impairment, final Boolean generally_attentive, final Boolean academic_achiever) {
 
         this.id = id;
         this.name = name;

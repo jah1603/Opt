@@ -12,7 +12,7 @@ public class Desk {
 
     public Desk(){};
 
-    public Desk(int id, int capacity, int row, int column) {
+    public Desk(int capacity, int row, int column) {
 
         this.id = id;
         this.capacity = capacity;

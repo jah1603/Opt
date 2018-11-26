@@ -4,6 +4,8 @@ import org.junit.Test;
 import models.Desk;
 import models.Pupil;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class PupilTest {
 
     Pupil pupil1;
@@ -13,9 +15,33 @@ public class PupilTest {
 
     @Before
      public void setUp(){
-         pupil1 = new Pupil(1, 2,  league);
-         pupil2 = new Pupil(1,2 ,league);
+         pupil1 = new Pupil("Frank", true, false, false);
+         pupil2 = new Pupil("Harriet", false, true, true);
          desk1 = new Desk();
+     }
+
+     @Test
+     public void hasName(){
+        assertEquals("Frank", pupil1.getName());
+        assertEquals("Harriet", pupil2.getName());
+     }
+
+     @Test
+     public void hasSensoryImpairmentBoolean(){
+        assertEquals(true, pupil1.hasSensoryImpairment());
+        assertEquals(false, pupil2.hasSensoryImpairment());
+     }
+
+     @Test
+     public void hasAttentivenessBoolean(){
+        assertEquals(false, pupil1.isGenerallyAttentive());
+        assertEquals(true, pupil2.isGenerallyAttentive());
+     }
+
+     @Test
+     public void hasAcademicAchievementBoolean(){
+        assertEquals(false, pupil1.isAcademicAchiever());
+        assertEquals(true, pupil2.isAcademicAchiever());
      }
 
 
