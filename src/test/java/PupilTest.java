@@ -25,6 +25,12 @@ public class PupilTest {
      }
 
      @Test
+     public void canGetAndSetId(){
+        pupil3.setId(4);
+        assertEquals(4, pupil3.getId());
+     }
+
+     @Test
      public void hasName(){
         assertEquals("Frank", pupil1.getName());
         assertEquals("Harriet", pupil2.getName());
