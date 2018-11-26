@@ -10,7 +10,7 @@ public class Pupil {
     private String name;
     private Set<Pupil> friends = new HashSet<>();
     private Set<Pupil> enemies = new HashSet<>();
-    private Set<Pupil> disruptive_partnerships = new HashSet<Pupil>();
+    private Set<Pupil> disruptive_partnerships = new HashSet<>();
     private Boolean sensory_impairment;
     private Boolean generally_attentive;
     private Boolean academic_achiever;
