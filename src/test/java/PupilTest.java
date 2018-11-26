@@ -4,12 +4,15 @@ import org.junit.Test;
 import models.Desk;
 import models.Pupil;
 
+import java.util.HashSet;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PupilTest {
 
     Pupil pupil1;
     Pupil pupil2;
+    Pupil pupil3;
     Desk desk1;
     Desk desk2;
 
@@ -17,6 +20,7 @@ public class PupilTest {
      public void setUp(){
          pupil1 = new Pupil("Frank", true, false, false);
          pupil2 = new Pupil("Harriet", false, true, true);
+         pupil3 = new Pupil("Lucy", true, true, false);
          desk1 = new Desk();
      }
 
@@ -48,6 +52,31 @@ public class PupilTest {
      public void canAssignDesk(){
         pupil1.setDesk(desk1);
         assertEquals(desk1, pupil1.getDesk());
+     }
+
+     @Test
+     public void canAddFriends(){
+        pupil1.addFriend(pupil2);
+        HashSet<Pupil> friends = new HashSet<Pupil>();
+        friends.add(pupil2);
+        assertEquals(1, pupil1.getFriends(friends).size());
+     }
+
+     @Test
+     public void canAddEnemies(){
+        pupil1.addEnemy(pupil3).addEnemy(pupil2);
+        HashSet<Pupil> enemies = new HashSet<Pupil>();
+        enemies.add(pupil2);
+        enemies.add(pupil3);
+        assertEquals(2, pupil1.getEnemies(enemies).size());
+     }
+
+     @Test
+     public void canAddDisruptivePartners(){
+        pupil1.addDisruptivePartner(pupil3);
+        HashSet<Pupil> disruptive_partnerships = new HashSet<Pupil>();
+        disruptive_partnerships.add(pupil3);
+        assertEquals(1, pupil1.getDisruptivePartnerships(disruptive_partnerships).size());
      }
 
 
