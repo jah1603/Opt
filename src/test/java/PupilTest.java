@@ -87,5 +87,18 @@ public class PupilTest {
         assertEquals(2, pupil1.getDisruptivePartnerships(disruptive_partnerships).size());
      }
 
+     @Test
+    public void canGetStringRepresentationOfObject(){
+        assertEquals("0", pupil1.toString());
+     }
+
+     @Test
+    public void canGetSignificantRelationships(){
+         pupil1.addDisruptivePartner(pupil3).addDisruptivePartner(pupil2);
+         pupil1.addEnemy(pupil3).addEnemy(pupil2);
+         pupil1.addFriend(pupil3).addEnemy(pupil2);
+         assertEquals(5, pupil1.significantRelationships());
+     }
+
 
 }
