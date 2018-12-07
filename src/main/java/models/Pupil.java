@@ -108,5 +108,14 @@ public class Pupil {
         this.desk = desk;
     }
 
+    public int significantRelationships(){
+        return this.enemies.size() + this.friends.size() + this.disruptive_partnerships.size();
+    }
+
+    @Override
+    public String toString() {
+        String string =  Integer.toString(this.id);
+        return string;
+    }
 
 }
